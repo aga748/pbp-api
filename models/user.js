@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DOUBLE
        },
     imageUser: {
-        allowNull: false,
+        allowNull: true,
        type: DataTypes.TEXT
     }
   }, {

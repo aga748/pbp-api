@@ -2,42 +2,34 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-      return queryInterface.createTable('users', {
+      return queryInterface.createTable('transaksi', {
          id: {
            allowNull: false,
            autoIncrement: true,
            primaryKey: true,
            type: Sequelize.INTEGER
           },
-          name: {
+          id_user: {
+            allowNull: false,
+            type: Sequelize.INTEGER
+           },
+        name: {
             allowNull: false,
             type: Sequelize.STRING
            },
-           username: {
+        judul_komik: {
             allowNull: false,
             type: Sequelize.STRING
            },
-           email: {
-            allowNull: false,
-            type: Sequelize.STRING
-           },
-           password: {
-            allowNull: false,
-            type: Sequelize.STRING
-           },
-           balance: {
+        harga: {
             allowNull: false,
             type: Sequelize.DOUBLE
            },
-           imageUser: {
-             allowNull: true,
-             type: Sequelize.TEXT
-           },
-           createdAt: {
+          createdAt: {
             allowNull: false,
             type: Sequelize.DATE
            },
-           updatedAt: {
+          updatedAt: {
             allowNull: false,
             type: Sequelize.DATE
            }
@@ -46,6 +38,6 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
 
-      return queryInterface.dropTable('users');
+      return queryInterface.dropTable('transaksi');
   }
 };

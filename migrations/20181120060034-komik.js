@@ -18,7 +18,7 @@ module.exports = {
           type: Sequelize.DOUBLE,
         },
         imageKomik: {
-          allowNull: false,
+          allowNull: true,
           type: Sequelize.TEXT
         },
         description: {

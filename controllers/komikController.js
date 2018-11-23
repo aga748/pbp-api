@@ -23,7 +23,7 @@ module.exports = {
       .create({
         judul: req.body.judul,
         harga: req.body.harga,
-        image: req.body.image,
+        imageKomik: req.body.image,
         description: req.body.description,
         halaman: req.body.halaman,
         nama_pengarang: req.body.nama_pengarang,
@@ -48,7 +48,7 @@ module.exports = {
       })
       .catch(err => res.status(400).send(err.errors.map(item => { return { error: item.message } })))
   },
-  deletekomik(req, res) {
+  deleteKomik(req, res) {
     return komik
       .findAndCountAll({ where: { id: req.params.id }})
       .then(result => {

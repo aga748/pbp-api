@@ -1,5 +1,6 @@
 const userController = require('./controllers/userController')
 const komikController = require('./controllers/komikController')
+const transaksiController = require('./controllers/transaksiController')
 
 module.exports = function(app) {
     app.get('/user', userController.fetchAll)
@@ -12,5 +13,11 @@ module.exports = function(app) {
     app.get('/komik/:id', komikController.getKomik)
     app.post('/komik/create/', komikController.createKomik)
     app.patch('/komik/:id', komikController.updateKomik)
-    app.delete('/komik/:id', komikController.deletekomik)
+    app.delete('/komik/:id', komikController.deleteKomik)
+
+    app.get('/transaksi/', transaksiController.fetchAll)
+    app.get('/transaksi/:id', transaksiController.getTransaksi)
+    app.post('/transaksi/create/', transaksiController.createTransaksi)
+    app.patch('/transaksi/:id', transaksiController.updateTransaksi)
+    app.delete('/transaksi/:id', transaksiController.deleteTransaksi)
 }

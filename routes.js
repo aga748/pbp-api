@@ -2,7 +2,7 @@ const userController = require('./controllers/userController')
 const komikController = require('./controllers/komikController')
 
 module.exports = function(app) {
-    app.get('/', userController.fetchAll)
+    app.get('/user', userController.fetchAll)
     app.get('/user/:id', userController.getUser)
     app.post('/user/', userController.createUser)
     app.patch('/user/:id', userController.updateUser)

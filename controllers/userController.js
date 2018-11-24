@@ -30,6 +30,26 @@ module.exports = {
       .then(user => res.status(200).send(user))
       .catch(err => res.status(400).send(err.errors.map(item => { return { error: item.message } })))
   },
+  loginUser(req,res) {
+    return user
+    .findOne({ where: { username: req.body.username} })
+    .then(result => {
+      (result.count !== 0)
+      {
+        var password = req.body.password;
+        if (result.rows[0].password == password)
+        {
+           res.status(200).send(result.rows[0]) 
+          
+        }
+        else
+        {
+          res.status(404).send({ error: 'data not found'})
+        }  
+      }
+    })
+    .catch(err => res.status(400).send(err.errors.map(item => { return { error: item.message } })))
+  },
   updateUser(req, res) {
     return user
       .findAndCountAll({ where: { id: req.params.id } })

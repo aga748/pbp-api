@@ -6,6 +6,7 @@ module.exports = function(app) {
     app.get('/user', userController.fetchAll)
     app.get('/user/:id', userController.getUser)
     app.post('/user/', userController.createUser)
+    app.post('/login/', userController.loginUser)
     app.patch('/user/:id', userController.updateUser)
     app.delete('/user/:id', userController.deleteUser)
 

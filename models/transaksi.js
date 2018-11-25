@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DOUBLE
        }
   }, {
-    tableName: 'transaksis'
+    tableName: 'transaksi'
   });
   transaksi.associate = function(models) {
     // associations can be defined here
